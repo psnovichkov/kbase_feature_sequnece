@@ -37,7 +37,7 @@ This sample module contains one small method - count_contigs.
         #BEGIN featureset_protein_sequence
         
         token = ctx['token']
-        wsClient = workspaceService(self.workspaceURL, token=token)
+        ws = workspaceService(self.workspaceURL, token=token)
 
         # Build genome2Features hash
         genome2Features = {}
