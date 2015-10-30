@@ -128,7 +128,7 @@ This sample module contains one small method - count_contigs.
                                 end = start + int(fLen)
                                 sequence += contig['sequence'][start:end]
                             else:
-                                end = int(fStart) - 1
+                                end = int(fStart)
                                 start = end - int(fLen)
                                 sequence += self.reverseComplement( contig['sequence'][start:end] )
                     
