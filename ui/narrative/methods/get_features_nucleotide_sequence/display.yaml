@@ -1,0 +1,39 @@
+#
+# define display information
+#
+name: Get features nuceltoide sequence
+tooltip: |
+	Get features nuceltoide sequence
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+	apps:
+		related:
+			[]
+		next:
+			[]
+	methods:
+		related:
+			[]
+		next:
+			[]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    featureset_id :
+        ui-name : |
+            FeatureSet Id
+        short-hint : |
+            FeatureSet Id
+        long-hint  : |
+            FeatureSet Id.
+
+description : |
+	<p>This is a simple method designed to illustrate the KBase SDK. </p>

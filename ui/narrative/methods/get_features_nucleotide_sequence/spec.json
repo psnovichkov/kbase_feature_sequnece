@@ -1,0 +1,51 @@
+{
+	"ver": "0.0.1",
+	
+	"authors": [
+		"psnovichkov"
+	],
+	"contact": "help@kbase.us",
+	"visible": true,
+	"categories": ["active"],
+	"widgets": {
+		"input": null,
+		"output": null
+	},
+	"parameters": [ 
+		{
+			"id": "featureset_id",
+			"optional": false,
+			"advanced": false,
+			"allow_multiple": false,
+			"default_values": [ "" ],
+			"field_type": "text",
+			"text_options": {
+				"valid_ws_types": ["KBaseCollections.FeatureSet"]
+			}
+		}
+	],
+    "behavior": {
+		"service-mapping": {
+			"url": "",
+			"name": "feature_sequence",
+			"method": "featureset_nucleotide_sequence",
+			"input_mapping": [
+				{
+					"narrative_system_variable": "workspace",
+					"target_argument_position": 0
+				},
+				{
+					"input_parameter": "featureset_id",
+					"target_argument_position": 1
+				}
+			],
+			"output_mapping": [
+				{
+					"service_method_output_path": [0],
+					"target_property": "feature_set_sequences"
+				}
+			]
+		}
+	},
+	"job_id_output_field": "docker"       
+}

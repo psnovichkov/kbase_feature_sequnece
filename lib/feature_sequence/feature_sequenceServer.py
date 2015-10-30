@@ -63,6 +63,9 @@ async_check_methods = {}
 async_run_methods['feature_sequence.featureset_protein_sequence_async'] = ['feature_sequence', 'featureset_protein_sequence']
 async_check_methods['feature_sequence.featureset_protein_sequence_check'] = ['feature_sequence', 'featureset_protein_sequence']
 sync_methods['feature_sequence.featureset_protein_sequence'] = True
+async_run_methods['feature_sequence.featureset_nucleotide_sequence_async'] = ['feature_sequence', 'featureset_nucleotide_sequence']
+async_check_methods['feature_sequence.featureset_nucleotide_sequence_check'] = ['feature_sequence', 'featureset_nucleotide_sequence']
+sync_methods['feature_sequence.featureset_nucleotide_sequence'] = True
 
 class AsyncJobServiceClient(object):
 
@@ -337,6 +340,10 @@ class Application(object):
                              name='feature_sequence.featureset_protein_sequence',
                              types=[basestring, basestring])
         self.method_authentication['feature_sequence.featureset_protein_sequence'] = 'required'
+        self.rpc_service.add(impl_feature_sequence.featureset_nucleotide_sequence,
+                             name='feature_sequence.featureset_nucleotide_sequence',
+                             types=[basestring, basestring])
+        self.method_authentication['feature_sequence.featureset_nucleotide_sequence'] = 'required'
         self.auth_client = biokbase.nexus.Client(
             config={'server': 'nexus.api.globusonline.org',
                     'verify_ssl': True,

@@ -177,4 +177,11 @@ class feature_sequence(object):
         resp = self._call('feature_sequence.featureset_protein_sequence',
                           [workspace_name, featureset_id], json_rpc_context)
         return resp[0]
+  
+    def featureset_nucleotide_sequence(self, workspace_name, featureset_id, json_rpc_context = None):
+        if json_rpc_context and type(json_rpc_context) is not dict:
+            raise ValueError('Method featureset_nucleotide_sequence: argument json_rpc_context is not type dict as required.')
+        resp = self._call('feature_sequence.featureset_nucleotide_sequence',
+                          [workspace_name, featureset_id], json_rpc_context)
+        return resp[0]
  

@@ -157,4 +157,23 @@ public class FeatureSequenceClient {
         List<List<FeatureSetSequence>> res = caller.jsonrpcCall("feature_sequence.featureset_protein_sequence", args, retType, true, true, jsonRpcContext);
         return res.get(0);
     }
+
+    /**
+     * <p>Original spec-file function name: featureset_nucleotide_sequence</p>
+     * <pre>
+     * </pre>
+     * @param   arg1   instance of original type "workspace_name" (A string representing a workspace name.)
+     * @param   arg2   instance of original type "featureset_id" (A string representing a FeatureSet reference.)
+     * @return   instance of list of type {@link us.kbase.featuresequence.FeatureSetSequence FeatureSetSequence}
+     * @throws IOException if an IO exception occurs
+     * @throws JsonClientException if a JSON RPC exception occurs
+     */
+    public List<FeatureSetSequence> featuresetNucleotideSequence(String arg1, String arg2, RpcContext... jsonRpcContext) throws IOException, JsonClientException {
+        List<Object> args = new ArrayList<Object>();
+        args.add(arg1);
+        args.add(arg2);
+        TypeReference<List<List<FeatureSetSequence>>> retType = new TypeReference<List<List<FeatureSetSequence>>>() {};
+        List<List<FeatureSetSequence>> res = caller.jsonrpcCall("feature_sequence.featureset_nucleotide_sequence", args, retType, true, true, jsonRpcContext);
+        return res.get(0);
+    }
 }

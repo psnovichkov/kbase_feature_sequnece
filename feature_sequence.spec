@@ -21,4 +21,6 @@ module feature_sequence {
 	} FeatureSetSequence;
 	
 	funcdef featureset_protein_sequence(workspace_name,featureset_id) returns ( list<FeatureSetSequence> ) authentication required;
+	funcdef featureset_nucleotide_sequence(workspace_name,featureset_id) returns ( list<FeatureSetSequence> ) authentication required;
+
 };
