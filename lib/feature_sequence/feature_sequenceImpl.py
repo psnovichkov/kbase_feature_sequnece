@@ -130,16 +130,6 @@ This sample module contains one small method - count_contigs.
                             sequence = reverseComplement(sequence)
                         returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': sequence})
         
-        
-        # Process each genome one by one
-        for genomeRef in genome2Features:
-            genome = ws.get_objects([{'ref':genomeRef}])[0]['data']
-            featureIds = genome2Features[genomeRef]
-            for feature in genome['features']:
-                for fId in featureIds:
-                    if fId == feature['id']:
-                        returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': feature['protein_translation']})
-        
         #END featureset_nucleotide_sequence
 
         # At some point might do deeper type checking...
