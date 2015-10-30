@@ -128,7 +128,7 @@ This sample module contains one small method - count_contigs.
                             sequence += contig['sequence'][start:end]
                         if fStrand == '-':
                             sequence = reverseComplement(sequence)
-                    returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': feature['protein_translation']})
+                    returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': sequence})
         
         
         # Process each genome one by one
