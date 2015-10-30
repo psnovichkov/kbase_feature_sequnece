@@ -127,7 +127,7 @@ This sample module contains one small method - count_contigs.
                             end = start + int(fLen)
                             sequence += contig['sequence'][start:end]
                         if fStrand == '-':
-                            sequence = reverseComplement(sequence)
+                            sequence = self.reverseComplement(sequence)
                         returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': sequence})
         
         #END featureset_nucleotide_sequence
