@@ -123,11 +123,15 @@ This sample module contains one small method - count_contigs.
                         for location in feature['location']:
                             (contigId, fStart, fStrand, fLen) = location
                             contig = contigs[contigId]
-                            start = int(fStart) - 1
-                            end = start + int(fLen)
-                            sequence += contig['sequence'][start:end]
-                        if fStrand == '-':
-                            sequence = self.reverseComplement(sequence)
+                            if fStrand == '+':
+                                start = int(fStart) - 1
+                                end = start + int(fLen)
+                                sequence += contig['sequence'][start:end]
+                            else:
+                                end = int(fStart) - 1
+                                start = end - int(fLen)
+                                sequence += self.reverseComplement( contig['sequence'][start:end] )
+                    
                         returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': sequence})
         
         #END featureset_nucleotide_sequence
