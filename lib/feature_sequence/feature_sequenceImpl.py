@@ -120,17 +120,19 @@ This sample module contains one small method - count_contigs.
                 for fId in featureIds:
                     if fId == feature['id']:
                         sequence = ''
+                        fStrand = ''
                         for location in feature['location']:
                             (contigId, fStart, fStrand, fLen) = location
                             contig = contigs[contigId]
                             if fStrand == '+':
                                 start = int(fStart) - 1
                                 end = start + int(fLen)
-                                sequence += contig['sequence'][start:end]
                             else:
                                 end = int(fStart)
                                 start = end - int(fLen)
-                                sequence += self.reverseComplement( contig['sequence'][start:end] )
+                        sequence += contig['sequence'][start:end]
+                        if fStrand == '-':
+                            sequence = self.reverseComplement( sequence )
                     
                         returnVal.append({'feature_id' : fId, 'genome_ref' : genomeRef,'sequence': sequence})
         
