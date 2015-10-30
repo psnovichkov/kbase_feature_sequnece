@@ -30,7 +30,7 @@ This sample module contains one small method - count_contigs.
     def reverseComplement(self, sequence):
         buf = []
         for na in sequence[::-1]:
-            buf.append( RC_ACTG[NUCL_INDEX[ord(na)]] )
+            buf.append( self.RC_ACTG[self.NUCL_INDEX[ord(na)]] )
         return ''.join(buf)
     
     def buildGenome2Features(self, ws, workspace_name, featureset_id):
