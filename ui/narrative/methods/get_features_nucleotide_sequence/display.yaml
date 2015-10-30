@@ -1,9 +1,9 @@
 #
 # define display information
 #
-name: Get features nucletoide sequence
+name: Get features nucleotide sequence
 tooltip: |
-	Get features nucletoide sequence
+	Get features nucleotide sequence
 screenshots: []
 
 icon: icon.png
