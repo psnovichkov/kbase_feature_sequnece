@@ -130,7 +130,7 @@ This sample module contains one small method - count_contigs.
                             else:
                                 end = int(fStart)
                                 start = end - int(fLen)
-                        sequence += contig['sequence'][start:end]
+                            sequence += contig['sequence'][start:end]
                         if fStrand == '-':
                             sequence = self.reverseComplement( sequence )
                     
