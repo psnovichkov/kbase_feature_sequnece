@@ -36,6 +36,7 @@ This sample module contains one small method - count_contigs.
         # return variables are: returnVal
         #BEGIN featureset_protein_sequence
         
+        returnVal = []
         token = ctx['token']
         ws = workspaceService(self.workspaceURL, token=token)
 
